@@ -106,8 +106,6 @@ src="https://www.facebook.com/tr?id=1106400055611464&ev=PageView&noscript=1"
 
   .phone { margin-top: 18px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; }
   .phone span { font: 700 18px/1 var(--body); font-variant-numeric: tabular-nums; user-select: all; }
-  .copy { font: 600 14px/1 var(--body); padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
-  .copy:focus-visible { outline: 3px solid var(--tg); outline-offset: 2px; }
 
   @media (max-width: 420px) { .shift { grid-template-columns: 1fr; } }
   @media (prefers-reduced-motion: reduce) { .cta { transition: none; } }
@@ -140,7 +138,6 @@ src="https://www.facebook.com/tr?id=1106400055611464&ev=PageView&noscript=1"
     </a>
     <div class="phone">
       <span id="phone">+998 93 465 55 33</span>
-      <button class="copy" id="copy" type="button">Nusxa olish</button>
     </div>
   </section>
 </main>
@@ -149,15 +146,4 @@ src="https://www.facebook.com/tr?id=1106400055611464&ev=PageView&noscript=1"
   document.querySelectorAll('.cta').forEach(a => a.addEventListener('click', () => {
     if (window.fbq) fbq('track', 'Contact');
   }));
-
-  const btn = document.getElementById('copy');
-  btn.addEventListener('click', () => {
-    const text = '+998934655533';
-    const done = () => { btn.textContent = 'Nusxa olindi'; setTimeout(() => btn.textContent = 'Nusxa olish', 1800); };
-    const fallback = () => {
-      const r = document.createRange(); r.selectNodeContents(document.getElementById('phone'));
-      const s = getSelection(); s.removeAllRanges(); s.addRange(r);
-    };
-    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
-  });
 </script>
