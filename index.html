@@ -74,11 +74,17 @@ src="https://www.facebook.com/tr?id=1106400055611464&ev=PageView&noscript=1"
   }
   h1 mark { background: var(--accent); color: var(--accent-ink); padding: 0 .15em; border-radius: 6px; }
 
-  .company { margin-top: 18px; }
-  .company p { margin: 0; font-size: 16px; color: var(--muted); }
-  .company b { color: var(--ink); font-weight: 700; }
-  .company ul { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-  .company li { font-size: 14px; font-weight: 600; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
+  .company { margin-top: 20px; padding: 16px 18px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); }
+  .company p { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .company p span { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .company p b { font: 800 22px/1.1 var(--display); }
+  .company ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 10px; }
+  .company li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; font-size: 16px; font-weight: 600; line-height: 1.4; }
+  .company li::before {
+    content: ""; width: 22px; height: 22px; border-radius: 6px; background: var(--accent);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23121735' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E");
+    background-size: 15px; background-position: center; background-repeat: no-repeat;
+  }
 
   .pay {
     margin-top: 22px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px;
@@ -126,7 +132,7 @@ src="https://www.facebook.com/tr?id=1106400055611464&ev=PageView&noscript=1"
     <span class="tag"><span class="dot"></span>Vakansiya · Toshkent</span>
     <h1>Call-center <mark>operatorlari</mark> kerak!</h1>
     <div class="company">
-      <p>Kompaniya: <b>Nutra life</b></p>
+      <p><span>Kompaniya</span><b>Nutra life</b></p>
       <ul>
         <li>Toshkentdagi premium Call Center 🔥</li>
         <li>3 yillik tajriba</li>
